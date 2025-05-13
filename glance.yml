@@ -1,0 +1,96 @@
+pages:
+  - name: Home
+    columns:
+      - size: small
+        widgets:
+          - type: calendar
+            first-day-of-week: monday
+          
+          - type: weather
+            location: Kyneton, Victoria, Australia
+            units: metric
+            hour-format: 24h
+            show-area-name: true
+          
+          - type: markets
+            markets:
+              - symbol: BTC-USD
+                name: Bitcoin
+              - symbol: AUD-USD
+                name: AUD/USD
+              - symbol: USD-JPY
+                name: USD/JPY
+              - symbol: USD-CAD
+                name: USD/CAD
+          
+          - type: rss
+            title: Indie & Tech News
+            limit: 10
+            collapse-after: 3
+            cache: 12h
+            feeds:
+              - url: https://ihrss.io/all.rss
+                title: Indie Hackers
+                limit: 3
+              - url: https://feeds.feedburner.com/TechCrunch/
+                title: TechCrunch
+              - url: https://hnrss.org/frontpage
+                title: Hacker News
+      
+      - size: full
+        widgets:
+          - type: group
+            widgets:
+              - type: hacker-news
+                sort-by: top
+              - type: lobsters
+                sort-by: hot
+          
+          - type: videos
+            style: grid-cards
+            collapse-after-rows: 2
+            channels:
+              - UCXuqSBlHAE6Xw-yeJA0Tunw # Linus Tech Tips
+              - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
+              - UCsBjURrPoezykLs9EqgamOA # Fireship
+              - UCBJycsmduvYEL83R_U4JriQ # Marques Brownlee
+              - UCHnyfMqiRRG1u-2MsSQLbXA # Veritasium
+          
+          - type: group
+            widgets:
+              - type: reddit
+                subreddit: technology
+                show-thumbnails: true
+                show-flairs: true
+              - type: reddit
+                subreddit: business
+                show-thumbnails: true
+                extra-sort-by: engagement
+      
+      - size: small
+        widgets:
+          - type: rss
+            title: AI & Tech Features
+            limit: 10
+            collapse-after: 5
+            cache: 12h
+            feeds:
+              - url: https://www.wired.com/feed/rss
+                title: Wired
+              - url: https://www.theverge.com/rss/index.xml
+                title: The Verge
+              - url: https://lexfridman.com/category/ai/feed/
+                title: Lex Fridman AI
+              - url: https://www.marktechpost.com/category/technology/artificial-intelligence/feed
+                title: MarkTechPost AI
+          
+          - type: releases
+            cache: 1d
+            show-source-icon: true
+            repositories:
+              - glanceapp/glance
+              - go-gitea/gitea
+              - immich-app/immich
+              - syncthing/syncthing
+              - tensorflow/tensorflow
+              - openai/openai-python
